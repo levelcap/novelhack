@@ -1618,3 +1618,9 @@ screen memories: #an album of memories
         focus_mask True
         xpos 600 ypos 350
         action Jump("spy")
+    imagebutton:
+        idle "bicycle.png"
+        hover "bicycle_hover.png"
+        focus_mask True
+        xpos 900 ypos 450
+        action Jump("bicycle")

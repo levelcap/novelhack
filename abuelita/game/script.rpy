@@ -3,8 +3,9 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define a = Character("Abuelita")
-define m = Character("Me")
+define a = Character("Abuelita", color='#ff5100')
+define m = Character("Me", color='#006aff')
+define ym = Character("Me (Younger)", color='#006aff')
 
 # The game starts here.
 
