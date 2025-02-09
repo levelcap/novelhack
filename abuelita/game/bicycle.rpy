@@ -1,6 +1,7 @@
 ﻿default training_wheels = True
 
 label bicycle:
+    play sound "bike_bell.mp3"
     scene bg black
     with fade
 

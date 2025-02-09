@@ -1610,7 +1610,6 @@ style slider_slider:
     variant "small"
     xsize 900
 
-
 screen memories: #an album of memories
     imagebutton:
         idle "photo.png"
