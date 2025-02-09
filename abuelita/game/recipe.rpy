@@ -79,8 +79,17 @@ label cooking_end:
         jump cooking_retry
     else:
         m "Yeees this is it! Crushed it!"
-        m "I remember abuelita always telling me - you suck at cooking, just keep trying I guess"
+        m "I remember abuelita always telling me:"
+
+        show grandma at left
+        with dissolve
+
+        a "Hector, you suck at cooking so just randomly try things until it works I guess."
         $ cooking_success = True
+
+        hide grandma
+        with dissolve
+
         jump end_recipe
 
 label cooking_retry:
