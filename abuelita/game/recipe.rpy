@@ -18,8 +18,13 @@ label recipe:
 
     scene bg kitchen
     with fade
+
+    "Wow I forgot that abuelita's kitchen was painted in a whole different style from her living room!"
+
     show cookbook at truecenter
-    m "Can't hurt to try!"
+    with dissolve
+
+    m "Got the book, got the kitchen, tortillas here we come!"
 
     jump cooking_step
 
@@ -33,22 +38,40 @@ label cooking_step:
 
     $ step += 1
 
-    menu:
-        "Add the masa harina" if not ingredients["masa"]:
-            $ ingredients["masa"] = True
-            jump cooking_step
+    if recipe_tries < 1:
+      menu:
+          "Add the masa harina" if not ingredients["masa"]:
+              "Dump a bunch of masa in there..."
+              $ ingredients["masa"] = True
+              jump cooking_step
 
-        "Add the agua" if not ingredients["agua"]:
-            $ ingredients["agua"] = True
-            jump cooking_step
+          "Add the agua" if not ingredients["agua"]:
+              "A splash of water..."
+              $ ingredients["agua"] = True
+              jump cooking_step
 
-        "Mezcla... y ... tortea" if not ingredients["mezcla"]:
-            $ ingredients["mezcla"] = True
-            jump cooking_step
+          "Mezcla... y... tortea" if not ingredients["mezcla"]:
+              "I'm not actually sure what this means - maybe I just sort of mash it?"
+              jump cooking_step
+    else:
+      menu:
+          "Add the masa harina" if step == 1:
+              "Let's try two cups of masa..."
+              $ ingredients["masa"] = True
+              jump cooking_step
+
+          "Add the agua" if step == 2:
+              "And we'll heat the water before adding it"
+              $ ingredients["agua"] = True
+              jump cooking_step
+
+          "Mezcla... y... tortea" if step == 3:
+              "Wait, I remember how to mix these!"
+              jump cooking_step
 
 label cooking_end:
     $ recipe_tries += 1
-    if recipe_tries < 3:
+    if recipe_tries < 2:
         m "I do NOT remember abuelita's tortillas tasting like burnt ass..."
         $ ingredients["masa"] = False
         $ ingredients["agua"] = False
