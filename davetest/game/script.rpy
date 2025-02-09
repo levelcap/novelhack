@@ -10,6 +10,10 @@ default insult = False
 # The game starts here.
 
 label start:
+    show bg city
+    with fade
+    show dave point at right
+    with moveinright
     dave "Welcome to my visual novel, cool guy"
 
 menu:
@@ -36,6 +40,11 @@ label move_on:
     jump end
 
 label end:
+    hide dave point
+    with dissolve
+    show dave weird at right
+    with dissolve
+
     if insult:
         "THE END, maybe you should have been nicer"
     else:
