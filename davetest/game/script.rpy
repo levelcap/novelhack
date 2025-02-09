@@ -10,7 +10,7 @@ default insult = False
 # The game starts here.
 
 label start:
-    dave "Welcome to my visual novel, nerds"
+    dave "Welcome to my visual novel, cool guy"
 
 menu:
     "YOU ARE THE NERD":
