@@ -1626,3 +1626,10 @@ screen memories: #an album of memories
         sensitive not memory_states["bicycle"]
         xpos 1000 ypos 650
         action Jump("bicycle")
+    imagebutton:
+        idle "cookbook_menu.png"
+        hover "cookbook_menu_hover.png"
+        focus_mask True
+        sensitive not memory_states["recipe"]
+        xpos 1250 ypos 550
+        action Jump("recipe")
