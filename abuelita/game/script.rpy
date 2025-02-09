@@ -3,31 +3,53 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
-
+define a = Character("Abuelita")
+define m = Character("Me")
 
 # The game starts here.
 
 label start:
+    scene bg house outside
+    with dissolve
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    "Abuelita died of being super old a week ago now."
 
-    scene bg room
+    "I'm going to her house to look through old photos and cry and whatever"
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    show bg house inside
+    with fade
 
-    show eileen happy
+    "It's weird seeing it empty."
 
-    # These display lines of dialogue.
+    "Hey look a trunk that is probably filled with old memories."
 
-    e "You've created a new Ren'Py game."
+    scene bg house inside trunk
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+menu:
+    "What should I do with this really really cool trunk?"
 
-    # This ends the game.
+    "Open it!":
+        jump memories
+
+    "You know what I'm actually not really feeling memories right now":
+        jump do_nothing
+
+label memories:
+    scene bg trunk open
+    call screen memories
+
+label spy:
+    "WHOA A SPY THING"
+
+    return
+
+label do_nothing:
+    "I'll deal with this later."
+
+    scene bg house outside
+
+    "Sometimes not playing the game is a way of winning, probably."
+
+    "The End."
 
     return

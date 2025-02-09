@@ -1609,3 +1609,12 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+
+screen memories: #an album of memories
+    imagebutton:
+        idle "photo.png"
+        hover "photo_hover.png"
+        focus_mask True
+        xpos 600 ypos 350
+        action Jump("spy")

@@ -15,13 +15,14 @@ label start:
     show dave point at right
     with moveinright
     dave "Welcome to my visual novel, cool guy"
+    call screen chest
 
-menu:
-    "YOU ARE THE NERD":
-        jump insult
+label memories:
+    call screen memories
 
-    "Thanks, I guess":
-        jump move_on
+label spy:
+    hide screen memories
+    "I remember that granny was a spy"
 
 label insult:
     $ insult = True
