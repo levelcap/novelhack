@@ -7,18 +7,29 @@ define a = Character("Abuelita", color='#ff5100')
 define m = Character("Me", color='#006aff')
 define ym = Character("Me (Younger)", color='#006aff')
 
+
+#Highschool characters
+define sophie_chou = Character("Sophie Chou")
+define billy_ray = Character("Billy Ray")
+define montgomery = Character("Montgomery")
+define mrs_fairchild = Character("Mrs Fairchild")
+
+
+
 # Memory states
 default memory_states = {
   "spy": False,
   "bicycle": False,
   "recipe": False,
   "spy": False,
+  "highschool": False,
 }
 default memory_counter = 0
 
 # The game starts here.
 
 label start:
+    jump memories
     scene bg house outside
     with dissolve
 
