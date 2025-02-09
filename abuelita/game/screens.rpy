@@ -1634,7 +1634,7 @@ screen memories: #an album of memories
         action Jump("recipe")
     imagebutton:
         idle "highschool/photo.png"
-        hover "highschool/photo.png"
+        hover "highschool/photo_hover.png"
         focus_mask True
         sensitive not memory_states["highschool"]
         xpos 400 ypos 350

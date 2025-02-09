@@ -5,7 +5,17 @@ default with_sophie = False
 label highschool_start:
     scene campus
     show fairchild
-    mrs_fairchild "Alright kids, we made it to Harrington High School. This place is positively Sybaritic (S-Y-B-A-R-I-T-I-C). But we didn’t come here to marvel, we are here to get our club’s first ever regional title. We have 1 hour before the contest starts, so go make new friends and remember to be respectful. Hector, don’t get distracted on the campus. Billy Ray, please make an effort and review your word list, you don’t want to be the reason we lose. Sophie, make sure all the boys are in the auditorium in 1 hour sharp."
+    mrs_fairchild "Alright kids, we made it to Harrington High School. This place is positively Sybaritic (S-Y-B-A-R-I-T-I-C)."
+    
+    "But we didn’t come here to marvel, we are here to get our club’s first ever regional title."
+    
+    "We have 1 hour before the contest starts, so go make new friends and remember to be respectful."
+    
+    "(Pointing at you) Hector, don’t get distracted on the campus."
+    
+    "Billy Ray, please make an effort and review your word list, you don’t want to be the reason we lose."
+    
+    "Sophie, make sure all the boys are in the auditorium in 1 hour sharp."
 
     menu:
         "Speak to Sophie Chou":
@@ -19,10 +29,47 @@ label highschool_start:
         "Visit the halls of the high-school":
             jump H1
 
+label F1:
+
+    scene auditorium with fade
+
+
+    "Hector enters the grand auditorium, scanning the crowd."
+
+    # Grandma waves the camera
+    show sb_abuelita at left with dissolve
+    "Abuelita waves a camera in the air, beaming at him. She rushes over and pulls him into a warm hug."
+
+    a "How do you feel, mijo?" 
+    "She grins, squeezing his shoulders."
+    a "You'll do great! I have faith in you."
+    
+    a "(Leaning in slightly, lowering her voice, and winking) But if you need a little help… just say the word."
+
+    menu:
+        "Oh for sure Abuela, we'll need all the help we can get. All I need is for you to google the words on your iPad and cough if they contain an 'H'.":
+            show sb_abuelita_laughing at left with dissolve
+            a "Oh my little bandidos!"
+        "Ah ah no worries grandma, we don't need any help to beat these morons.":
+            a "I am so proud of you, mijo!"
+    
+    a "Ah, my Hectorito. Stay with me for a bit. I brought you your favorite tamarocas."
+
+    "It was a great day. Hector had a good time with his grandma and wasn’t even stressed when the championship started."
+    
+    "His team didn’t win, but looking back, it wasn’t important at all."
+
+    $ memory_counter += 1
+    $ memory_states["highschool"] = True
+    jump hs_return_memories
+
+
 label SC1:
     scene campus
     show sophie_chou
-    sophie_chou "Hi Hector, best of luck for the contest, I hope we win, it would look really good on my university applications and would be perfectly cromulent (C-R-O-M-U-L-E-N-T)."
+    sophie_chou "Hi Hector, best of luck for the contest!"
+    
+    sophie_chou "I hope we win, it would look really good on my university applications and would be perfectly cromulent (C-R-O-M-U-L-E-N-T)."
     
     menu:
         "That Billy Ray is really hurting our team’s chance, what can we do to get rid of him?":
@@ -39,7 +86,12 @@ label SC1:
 label SC2:
     scene campus
     show sophie_chou_frowning
-    sophie_chou "How dare you say something like this! So very solipsistic of you (S-O-L-I-P-S-I-S-T-I-C). Billy Ray is our team-mate and we’re all in this together. That is, unless he got locked in a room, or got food poisoning, or would run into trouble in a way that doesn’t penalize the team."
+    sophie_chou "How dare you say something like this! So very solipsistic of you (S-O-L-I-P-S-I-S-T-I-C)."
+    
+    sophie_chou "Billy Ray is our team-mate and we’re all in this together."
+    
+    show sophie_chou fade
+    shopie "That is, unless he got locked in a room, or got food poisoning, or would run into trouble in a way that doesn’t penalize the team."
     
     menu:
         "Wanna go talk to Billy Ray?":
@@ -52,7 +104,11 @@ label SC2:
 label BR1:
     scene campus
     show billy_ray
-    billy_ray "Wassup, loser! There’s no way I’m studying my word list today. If my dad hadn’t paid for the team’s travel expenses and forced Mrs Fairchild to take me in the team, I’d be playing with my Switch right now. This place is sumptuous (S-O-M-T-U-O-S) though. I’m sure there is some good stuff to steal in these corridors."
+    billy_ray "Wassup, loser!"
+
+    billy_ray "There’s no way I’m studying my word list today. If my dad hadn’t paid for the team’s travel expenses and forced Mrs Fairchild to take me in the team, I’d be playing with my Switch right now."
+    
+    billy_ray "This place is sumptuous (S-O-M-T-U-O-S) though. I’m sure there is some good stuff to steal in these corridors."
     
     menu:
         "I’ll go check the corridors, will let you know if I find something":
@@ -64,7 +120,11 @@ label BR1:
 
 label H1:
     scene hallway
-    "The high school is even more luxurious inside, with its golden lockers, marble archways, satin curtains. Entering the hallway, Hector spots the Harrington Spelling Bee team: five boys, looking at a piece of paper, and whispering to each other in a small circle. When they see you, their captain folds the paper, puts it in his uniform jacket. The group disperses, and the captain comes towards you."
+    "The high school is even more luxurious inside, with its golden lockers, marble archways, satin curtains."
+    
+    "Entering the hallway, Hector spots the Harrington Spelling Bee team: five boys, looking at a piece of paper, and whispering to each other in a small circle."
+    
+    "When they see you, their captain folds the paper, puts it in his uniform jacket. The group disperses, and the captain comes towards you."
     
     show montgomery
     montgomery "What are you doing here, peon (P-E-O-N). Are you lost?"
@@ -109,4 +169,19 @@ label H3:
 
 label H4:
     "With Sophie by your side, you face Montgomery... (To be continued)"
-    return
+    $ memory_counter += 1
+    $ memory_states["highschool"] = True
+    jump hs_return_memories
+
+
+label hs_return_memories:
+    scene bg trunk open
+    with fade
+
+    "Ah good memories. anyway..."
+
+    if memory_counter >= 3:
+      "That's everything in the trunk"
+      jump happy_end
+
+    call screen memories
