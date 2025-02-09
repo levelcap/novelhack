@@ -3,6 +3,9 @@
 saves
 log.txt
 traceback.txt
+*.rypc
+cache/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

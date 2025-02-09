@@ -3,31 +3,40 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
-
+define dave = Character('Dave', color="#b59aff")
+define me = Character('Me', color="#c8ffc8")
+default insult = False
 
 # The game starts here.
 
 label start:
+    dave "Welcome to my visual novel, nerds"
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+menu:
+    "YOU ARE THE NERD":
+        jump insult
 
-    scene bg room
+    "Thanks, I guess":
+        jump move_on
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+label insult:
+    $ insult = True
 
-    show eileen happy
+    me "YOU ARE THE NERD!"
 
-    # These display lines of dialogue.
+    dave "Nice comeback... double-nerd!"
 
-    e "You've created a new Ren'Py game."
+    jump end
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+label move_on:
+    me "Thanks, I guess"
 
-    # This ends the game.
+    dave "You're welcome, stupid"
 
-    return
+    jump end
+
+label end:
+    if insult:
+        "THE END, maybe you should have been nicer"
+    else:
+        "THE END, guess being nice didn't help"
