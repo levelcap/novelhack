@@ -1609,3 +1609,27 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+
+screen memories: #an album of memories
+    imagebutton:
+        idle "photo.png"
+        hover "photo_hover.png"
+        focus_mask True
+        sensitive not memory_states["spy"]
+        xpos 600 ypos 700
+        action Jump("spy")
+    imagebutton:
+        idle "bicycle.png"
+        hover "bicycle_hover.png"
+        focus_mask True
+        sensitive not memory_states["bicycle"]
+        xpos 1000 ypos 650
+        action Jump("bicycle")
+    imagebutton:
+        idle "cookbook_menu.png"
+        hover "cookbook_menu_hover.png"
+        focus_mask True
+        sensitive not memory_states["recipe"]
+        xpos 1250 ypos 550
+        action Jump("recipe")

@@ -8,6 +8,7 @@ cache/
 game/saves/navigation.json
 game/saves/persistent
 saves/
+errors.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

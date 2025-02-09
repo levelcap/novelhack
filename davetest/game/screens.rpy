@@ -1609,3 +1609,20 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+screen chest: #a trunk of memories
+    modal True
+    imagebutton:
+        idle "chest closed.png"
+        hover "chest closed.png"
+        focus_mask True
+        xpos 600 ypos 200
+        action Jump("memories")
+
+screen memories: #a trunk of memories
+    imagebutton:
+        idle "spy.png"
+        hover "spy.png"
+        focus_mask True
+        xpos 600 ypos 500
+        action Jump("spy")

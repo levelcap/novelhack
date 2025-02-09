@@ -3,31 +3,87 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define a = Character("Abuelita", color='#ff5100')
+define m = Character("Me", color='#006aff')
+define ym = Character("Me (Younger)", color='#006aff')
 
+# Memory states
+default memory_states = {
+  "spy": False,
+  "bicycle": False,
+  "recipe": False,
+  "spy": False,
+}
+default memory_counter = 0
 
 # The game starts here.
 
 label start:
+    scene bg house outside
+    with dissolve
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    "Abuelita died of being super old a week ago now."
 
-    scene bg room
+    "I'm going to her house to look through old photos and cry and whatever"
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    show bg house inside
+    with fade
 
-    show eileen happy
+    "It's weird seeing it empty."
 
-    # These display lines of dialogue.
+    "Hey look a trunk that is probably filled with old memories."
 
-    e "You've created a new Ren'Py game."
+    scene bg house inside trunk
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+menu:
+    "What should I do with this really really cool trunk?"
 
-    # This ends the game.
+    "Open it!":
+        jump memories
+
+    "You know what I'm actually not really feeling memories right now":
+        jump do_nothing
+
+label memories:
+    scene bg trunk open
+    call screen memories
+
+label return_memories:
+    scene bg trunk open
+    with fade
+
+    "Ah good memories. anyway..."
+
+    if memory_counter >= 3:
+      "That's everything in the trunk"
+      jump happy_end
+
+    call screen memories
+
+label spy:
+    "WHOA A SPY THING"
+    $ memory_counter += 1
+    $ memory_states["spy"] = True
+
+    jump return_memories
+
+label do_nothing:
+    "I'll deal with this later."
+
+    scene bg house outside
+    with fade
+
+    "Sometimes not playing the game is a way of winning, probably."
+
+    "The End."
+
+    return
+
+label happy_end:
+    scene bg house outside
+    with fade
+
+    "I remembered some good memories today"
+    "The End."
 
     return
