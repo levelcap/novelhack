@@ -43,7 +43,7 @@ label keep_wheels:
     jump end_bike_ride
 
 label end_bike_ride:
-    a "Good job Hector! You're going at your own speed. Did I ever tell you about the time I had to get a message to my Father in the next town over when I was your age?"
+    a "Good job Hector! You're going at your own speed. Did I ever tell you about the time I had to get a message to my father in the next town over when I was your age?"
 
     "Hector shakes his head."
 
