@@ -1610,7 +1610,6 @@ style slider_slider:
     variant "small"
     xsize 900
 
-
 screen memories: #an album of memories
     imagebutton:
         idle "photo.png"
@@ -1633,3 +1632,10 @@ screen memories: #an album of memories
         sensitive not memory_states["recipe"]
         xpos 1250 ypos 550
         action Jump("recipe")
+    imagebutton:
+        idle "highschool/photo.png"
+        hover "highschool/photo.png"
+        focus_mask True
+        sensitive not memory_states["highschool"]
+        xpos 400 ypos 350
+        action Jump("highschool_start")
