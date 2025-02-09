@@ -1,5 +1,8 @@
 .DS_Store
 .vscode
+saves
+log.txt
+traceback.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
