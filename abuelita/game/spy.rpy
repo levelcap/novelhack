@@ -14,8 +14,11 @@ label spy_memory_start:
     scene bg black
     with fade
 
-    scene bg placeholder
+    scene bg spy living room
     with fade
+
+    show landline phone at truecenter
+    with moveintop
 
     "The phone rings three times and then stops - Hector knew better than to pick up before it rang thrice."
     "Abuelita was quite strict, almost superstitious about that."
@@ -49,6 +52,7 @@ label spy_no_interrupt:
     a "Oh… no, not them… (silent tears slowly roll down her cheeks)"
 
 label spy_next:
+    hide landline phone
     show hector young cry at right
     with dissolve
 
