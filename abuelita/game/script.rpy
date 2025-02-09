@@ -71,13 +71,6 @@ label return_memories:
 
     call screen memories
 
-label spy:
-    "WHOA A SPY THING"
-    $ memory_counter += 1
-    $ memory_states["spy"] = True
-
-    jump return_memories
-
 label do_nothing:
     "I'll deal with this later."
 
