@@ -1616,11 +1616,13 @@ screen memories: #an album of memories
         idle "photo.png"
         hover "photo_hover.png"
         focus_mask True
-        xpos 600 ypos 350
+        sensitive not memory_states["spy"]
+        xpos 600 ypos 700
         action Jump("spy")
     imagebutton:
         idle "bicycle.png"
         hover "bicycle_hover.png"
         focus_mask True
-        xpos 900 ypos 450
+        sensitive not memory_states["bicycle"]
+        xpos 1000 ypos 650
         action Jump("bicycle")

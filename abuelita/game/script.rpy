@@ -7,6 +7,13 @@ define a = Character("Abuelita", color='#ff5100')
 define m = Character("Me", color='#006aff')
 define ym = Character("Me (Younger)", color='#006aff')
 
+# Memory states
+default memory_states = {
+  "spy": False,
+  "bicycle": False,
+}
+default memory_counter = 0
+
 # The game starts here.
 
 label start:
@@ -39,18 +46,42 @@ label memories:
     scene bg trunk open
     call screen memories
 
+label return_memories:
+    scene bg trunk open
+    with fade
+
+    "Ah good memories. anyway..."
+
+    if memory_counter >= 2:
+      "That's everything in the trunk"
+      jump happy_end
+
+    call screen memories
+
 label spy:
     "WHOA A SPY THING"
+    $ memory_counter += 1
+    $ memory_states["spy"] = True
 
-    return
+    jump return_memories
 
 label do_nothing:
     "I'll deal with this later."
 
     scene bg house outside
+    with fade
 
     "Sometimes not playing the game is a way of winning, probably."
 
+    "The End."
+
+    return
+
+label happy_end:
+    scene bg house outside
+    with fade
+
+    "I remembered some good memories today"
     "The End."
 
     return

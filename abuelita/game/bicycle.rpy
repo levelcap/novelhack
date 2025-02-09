@@ -70,7 +70,7 @@ menu:
 label parade:
     a "There were so many people, and some of my friends saw me on my bike."
     a "They called me over and it turned out they were a part of the parade. I ended up at the front!"
-    return
+    jump end_bicycle
 
 label goes_home:
     a "There were so many people! I didn’t want to lose my bike, but I also couldn’t get around everyone with it"
@@ -78,5 +78,9 @@ label goes_home:
     a "There was a tree that hung over Main Street that my friends and I liked to climb. I climbed up it."
     a "I spotted my father and brother trying to move against the crowd of parade goers. I waved at them so hard I nearly fell out of the tree!"
     a "Eventually they saw me and we all went home."
+    jump end_bicycle
 
-    return
+label end_bicycle:
+    $ memory_counter += 1
+    $ memory_states["bicycle"] = True
+    jump return_memories
