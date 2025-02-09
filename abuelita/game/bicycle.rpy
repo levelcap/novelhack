@@ -14,6 +14,9 @@ label bicycle:
     scene bg placeholder
     with fade
 
+    show grandma at left
+    with dissolve
+
     a "Are you certain you want to take the training wheels off Hector?"
 
 menu:
@@ -26,15 +29,25 @@ menu:
 label remove_wheels:
     $ training_wheels = False
 
+    show hector young smile at right
+    with dissolve
+
     ym "Yes Grandma! All the other kids stopped using training wheels ages ago!"
 
     "Hector lets his abuelita remove the second training wheel with reluctance."
     "She puts it to the side and holds the bike up for him."
     "He takes the bike gingerly trying to make sure it stays balanced and swings his leg over the side. He puts his butt on the seat and promptly falls over."
 
+    hide hector young smile
+    show hector young cry at right
+    with dissolve
+
     jump end_bike_ride
 
 label keep_wheels:
+    show hector young smile at right
+    with dissolve
+
     ym "No Grandma! Want to watch how fast I can go?"
 
     "Hector gets on the bike and dashes off around the block while his abuelita watches."
