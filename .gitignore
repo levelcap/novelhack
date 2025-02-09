@@ -5,7 +5,9 @@ log.txt
 traceback.txt
 *.rpyc
 cache/
-
+game/saves/navigation.json
+game/saves/persistent
+saves/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
