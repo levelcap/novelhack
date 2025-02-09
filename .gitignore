@@ -9,6 +9,7 @@ game/saves/navigation.json
 game/saves/persistent
 saves/
 errors.txt
+common.rpymc
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
