@@ -3,7 +3,7 @@
 saves
 log.txt
 traceback.txt
-*.rypc
+*.rpyc
 cache/
 
 
