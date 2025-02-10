@@ -90,8 +90,8 @@ label SC2:
     
     sophie_chou "Billy Ray is our team-mate and we’re all in this together."
     
-    show sophie_chou fade
-    shopie "That is, unless he got locked in a room, or got food poisoning, or would run into trouble in a way that doesn’t penalize the team."
+    show sophie_chou
+    sophie_chou "That is, unless he got locked in a room, or got food poisoning, or would run into trouble in a way that doesn’t penalize the team."
     
     menu:
         "Wanna go talk to Billy Ray?":
@@ -168,11 +168,75 @@ label H3:
             jump F1
 
 label H4:
-    "With Sophie by your side, you face Montgomery... (To be continued)"
-    $ memory_counter += 1
-    $ memory_states["highschool"] = True
-    jump hs_return_memories
+    "Hector and Sophie punch that idiot Montgomery Ashford Wintrhope IV and it is cathartic (C-A-T-H-A-R-T-I-C)."
+    
+    "He leaves the room, screaming 'now I am really calling security, and Father will hear of this. You are done for!'."
+    
+    "You realize that the paper he had folded into his jacket fell to the ground."
+    
+    "Opening it, it reads: Spelling Bee contest - official words that will be asked to the candidates."
+    
+    "THIS LOOKS LIKE CHEATING!How did the Harrington team get hold of that paper??"
 
+    menu:
+        "Go warn Mrs Fairchild":
+            jump FR1
+        "Go to the end of the corridor":
+            jump MR1
+
+label MR1:
+    scene hallway
+    "You run aimlessly through the building, each corridor more scrumptious than the next."
+    
+    scene cctv_room
+    "After a few minutes, as you catch your breath, a dark room catches your attention."
+    
+    "In that room stand many monitors and microphones, the monitors show live footage from within the auditorium, from cameras positioned as to see the spelling bee judges’ notes!"
+    
+    "You realize this room is probably USED FOR CHEATING."
+
+    menu:
+        "Break everything in the room":
+            jump MR2
+
+        "Go tell Ms Fairchild about the cheating":
+            jump FR1
+
+label MR2:
+    scene cctv_room_on_fire
+    "You kick the monitors, rip the cables, slam the microphones on the ground."
+    
+    "$300,000 in damages later, you believe you have achieved sufficient destruction."
+    
+    "Time to go see your abuelita! She must be wondering what you've been up to."
+    
+    menu:
+        "Go back to see your abuelita":
+            jump F1
+        "Go warn Mrs Fairchild first":
+            jump FR1
+
+
+label FR1:
+    scene auditorium
+    show fairchild
+    mrs_fairchild "Ah, finally. I was wondering where you were hiding."
+
+    menu:
+        "Ms Fairchild, Harrington High is cheating! We have proof!":
+            show fairchild_sad
+            mrs_fairchild "I know, Hector. Everyone knows."
+            
+            mrs_fairchild "But Harrington High is so rich, and their bribes are so generous..."
+            
+            "(she looks at her Rolex)"
+            
+            show fairchild_sad
+
+            mrs_fairchild "Ok, time say hi to your Abuelita before the contest starts."
+            jump F1
+        "Ok, whatever Mrs Fairchild, I’ll go see my abuela":
+            jump F1
 
 label hs_return_memories:
     scene bg trunk open
