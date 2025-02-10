@@ -3,18 +3,20 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
+# Generally useful characters
 define a = Character("Abuelita", color='#ff5100')
 define m = Character("Me", color='#006aff')
 define ym = Character("Me (Younger)", color='#006aff')
 
+# Parrot characters
+define p = Character("Picasso")
+define dp = Character("Pepita")
 
 #Highschool characters
 define sophie_chou = Character("Sophie Chou")
 define billy_ray = Character("Billy Ray")
 define montgomery = Character("Montgomery")
 define mrs_fairchild = Character("Mrs Fairchild")
-
-
 
 # Memory states
 default memory_states = {

@@ -1,8 +1,3 @@
-
-define h = Character("Hector")
-define p = Character("Picasso")
-define dp = Character("Pepita")
-
 label Parrot:
 
     scene bg birdcage
