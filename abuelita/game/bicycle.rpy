@@ -70,10 +70,11 @@ label keep_wheels:
     hide grandma
     with dissolve
 
-    show tricycle at truecenter
+    play sound "zoom.mp3"
+    show hector young bike at truecenter
     with moveinright
 
-    hide tricycle
+    hide hector
     with moveoutleft
 
     "Hector gets on the bike and dashes off around the block while his abuelita watches."

@@ -59,7 +59,7 @@ menu:
 
 label memories:
     scene bg trunk open
-    with hpunch
+    with fade
     call screen memories
 
 label return_memories:
@@ -68,7 +68,7 @@ label return_memories:
 
     "Ah good memories. anyway..."
 
-    if memory_counter >= 4:
+    if memory_counter >= 5:
       "That's everything in the trunk"
       jump happy_end
 
