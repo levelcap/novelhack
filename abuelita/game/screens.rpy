@@ -1616,7 +1616,7 @@ screen memories: #an album of memories
         hover "spy_menu_hover.png"
         focus_mask True
         sensitive not memory_states["spy"]
-        xpos 600 ypos 700
+        xpos 500 ypos 700
         action Jump("spy")
     imagebutton:
         idle "bicycle.png"
@@ -1639,3 +1639,10 @@ screen memories: #an album of memories
         sensitive not memory_states["highschool"]
         xpos 400 ypos 350
         action Jump("highschool_start")
+    imagebutton:
+        idle "cage.png"
+        hover "cage_hover.png"
+        focus_mask True
+        sensitive not memory_states["parrot"]
+        xpos 650 ypos 700
+        action Jump("Parrot")

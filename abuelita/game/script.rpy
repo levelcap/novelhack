@@ -22,6 +22,7 @@ default memory_states = {
   "bicycle": False,
   "recipe": False,
   "highschool": False,
+  "parrot": False,
 }
 default memory_counter = 0
 

@@ -1,7 +1,7 @@
 
-#define h = Character("Hector")
-#define p = Character("Picasso")
-#define dp = Character("Pepita")
+define h = Character("Hector")
+define p = Character("Picasso")
+define dp = Character("Pepita")
 
 label Parrot:
 
@@ -76,14 +76,19 @@ label Parrot:
     dp"Not really, have a nice day!"
     show parrotright at right
     hide pepita
-    p "Have a nice day! A nice day!" 
-
+    p "Have a nice day! A nice day!"
 
     #play sound "audio/parrot effect.ogg"
 
-    
+    jump end_parrot
 
-     
+label end_parrot:
+    $ memory_states["parrot"] = True
+    $ memory_counter += 1
+    jump return_memories
 
 
-    
+
+
+
+
