@@ -19,6 +19,7 @@ label spy_memory_start:
 
     show landline phone at truecenter
     with moveintop
+    play sound "Phone Ring.mp3"
 
     "The phone rings three times and then stops - Hector knew better than to pick up before it rang thrice."
     "Abuelita was quite strict, almost superstitious about that."

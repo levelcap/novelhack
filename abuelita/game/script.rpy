@@ -56,6 +56,7 @@ menu:
 
 label memories:
     scene bg trunk open
+    with hpunch
     call screen memories
 
 label return_memories:

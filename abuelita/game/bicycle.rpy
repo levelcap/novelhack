@@ -35,12 +35,27 @@ label remove_wheels:
 
     ym "Yes Grandma! All the other kids stopped using training wheels ages ago!"
 
+    hide hector
+    with dissolve
+
+    show tricycle at truecenter
+    with dissolve
+
     "Hector lets his abuelita remove the second training wheel with reluctance."
     "She puts it to the side and holds the bike up for him."
-    "He takes the bike gingerly trying to make sure it stays balanced and swings his leg over the side. He puts his butt on the seat and promptly falls over."
+    "He takes the bike gingerly trying to make sure it stays balanced and swings his leg over the side annnnnnd..."
 
-    hide hector
+    show tricycle at truecenter
+    with hpunch
+
+    "Hector pedals once and falls directly on the sidewalk!"
+
     show hector young cry at right
+    with dissolve
+
+    a "Oh no you stupid idiot you fell over dummy!"
+
+    hide tricycle
     with dissolve
 
     jump end_bike_ride
@@ -51,13 +66,29 @@ label keep_wheels:
 
     ym "No Grandma! Want to watch how fast I can go?"
 
+    hide hector
+    hide grandma
+    with dissolve
+
+    show tricycle at truecenter
+    with moveinright
+
+    hide tricycle
+    with moveoutleft
+
     "Hector gets on the bike and dashes off around the block while his abuelita watches."
     "Hector returns, breathing hard, elated with his speed."
+
+    show hector young smile at right
+    show grandma at left
+    with dissolve
+
+    a "Wow really cool, really really cool stuff."
 
     jump end_bike_ride
 
 label end_bike_ride:
-    a "Good job Hector! You're going at your own speed. Did I ever tell you about the time I had to get a message to my father in the next town over when I was your age?"
+    a "Did I ever tell you about the time I had to get a message to my father in the next town over when I was your age?"
 
     "Hector shakes his head."
 
