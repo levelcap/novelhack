@@ -21,7 +21,6 @@ default memory_states = {
   "spy": False,
   "bicycle": False,
   "recipe": False,
-  "spy": False,
   "highschool": False,
 }
 default memory_counter = 0
@@ -65,18 +64,11 @@ label return_memories:
 
     "Ah good memories. anyway..."
 
-    if memory_counter >= 3:
+    if memory_counter >= 4:
       "That's everything in the trunk"
       jump happy_end
 
     call screen memories
-
-label spy:
-    "WHOA A SPY THING"
-    $ memory_counter += 1
-    $ memory_states["spy"] = True
-
-    jump return_memories
 
 label do_nothing:
     "I'll deal with this later."

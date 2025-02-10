@@ -1612,8 +1612,8 @@ style slider_slider:
 
 screen memories: #an album of memories
     imagebutton:
-        idle "photo.png"
-        hover "photo_hover.png"
+        idle "spy_menu.png"
+        hover "spy_menu_hover.png"
         focus_mask True
         sensitive not memory_states["spy"]
         xpos 600 ypos 700
